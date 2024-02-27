@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Bio's</title>
+  <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+
+    <!--image slider start-->
+    <div class="slider">
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+    <input type="radio" name="radio-btn" id="radio4">
+    
+    <div class="slides">
+        <!--slide 1-->
+        <div class="slide">
+        <div class="image">
+            <h1>Web Devs</h1>
+            <img src="Placehold1.png" alt="">
+        </div>
+        <div class="text">
+            <p>1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        </div>
+        <!--slide 2-->
+        <div class="slide">
+        <div class="image">
+            <h1>Web Devs</h1>
+            <img src="Placehold2.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        </div>
+        <!--slide 3-->
+        <div class="slide">
+        <div class="image">
+            <h1>Web Devs</h1>
+            <img src="Placehold3.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        </div>
+        <!--slide 4-->
+        <div class="slide">
+        <div class="image">
+            <h1>Web Devs</h1>
+            <img src="placehold4.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        </div>
+        <!--slide images end-->
+    </div>
+    <!--manual navigation start-->
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+    </div>
+    <!--manual navigation end-->
+    </div>
+
+<script type="text/javascript">
+    var counter = 1;
+    var intervalId; // Variable to store the interval ID
+  
+    function startSlideShow() {
+      intervalId = setInterval(function () {
+        document.getElementById('radio' + counter).checked = true;
+  
+        // Remove 'active' class from all paragraphs
+        var allParagraphs = document.querySelectorAll('.slide p');
+        allParagraphs.forEach(function (paragraph) {
+          paragraph.classList.remove('active');
+        });
+  
+        // Add 'active' class to the paragraph of the current slide
+        var activeSlide = document.querySelector('.slide.active');
+        if (activeSlide) {
+          var activeParagraph = activeSlide.querySelector('p');
+          if (activeParagraph) {
+            activeParagraph.classList.add('active');
+          }
+        }
+  
+        counter++;
+        if (counter > 1) {
+          counter = 1;
+        }
+      }, 5000);
+    }
+  
+    startSlideShow(); // Start the slideshow initially
+  
+    // You can stop the slideshow by calling clearInterval(intervalId)
+    // For example, to stop after 2 iterations:
+    setTimeout(function () {
+      clearInterval(intervalId);
+    }, 10000);
+  </script>
+
+</body>
+</html>

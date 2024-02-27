@@ -1,0 +1,34 @@
+body{
+    text-align: center;
+    padding: 1%;
+    margin: 0;
+    font-family: sans-serif;
+}
+p{
+    margin: 15;
+}
+#main_div{
+    background-color: skyblue;
+    padding: 20px;
+}
+.headers{
+    font-weight: 100;
+    color: brown;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 35px;
+}
+li a {
+    display: block;
+    float: left;
+    width: 60px;
+    padding: 5px;
+    background-color: skyblue;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: cornflowerblue;
+    color: white;
+}
